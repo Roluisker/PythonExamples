@@ -1,15 +1,15 @@
 import threading
 from threading import Thread
 
-class MyThread(Thread):
-    def run(self):
-        print("Torre de cali")
-        print(threading.current_thread().name)
-        for x in range(0,5):
-            for j in range(0,x+1):
-                print("*", end=" ")
+class MyThread:
+    def naturalNo(self):
+        #if threading.current_thread().name == "Thread-1":
+            for x in range(10):
+                print(x)
+        #else:
+            #print("Hey this is not  Thread -1")
 
+myObj = MyThread()
+t = Thread(target=myObj.naturalNo)
+t.start()
 
-objMyThread = MyThread()
-objMyThread.run() # tun() lo corre en el main thread
-objMyThread.start() # lo corre en un nuevo hilo distinto al main trehard
